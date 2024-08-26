@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizens Hash Storage</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.1/dist/web3.min.js"></script>
+</head>
+<body>
+    <h1>Citizens Hash Storage</h1>
+    <p>Connected Ethereum Account: <span id="account"></span></p>
+    <div>
+        <label for="citizenHash">Enter Citizen Hash:</label>
+        <input type="text" id="citizenHash">
+        <button id="addHashButton">Add Citizen Hash</button>
+    </div>
+    <div id="hashes">
+        <h2>Citizen Hashes</h2>
+        <ul id="hashList"></ul>
+    </div>
+
+    <h1>Citizen Verification</h1>
+    <label for="refugeeIris">Enter Refugee Iris Data: </label>
+    <input type="text" id="refugeeIris"><br>
+    <label for="refugeeFinger">Enter Refugee Finger Data: </label>
+    <input type="text" id="refugeeFinger"><br>
+    <button id="verifyRefugeeButton">Verify Refugee</button>
+    <div id="verificationResult"></div>
+
+    <h1>Refugee Registration</h1>
+    <div>
+        <label for="uniqueID">Unique ID:</label>
+        <input type="number" id="uniqueID">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <label for="sex">Sex:</label>
+        <input type="text" id="sex">
+        <label for="age">Age:</label>
+        <input type="text" id="age">
+        <label for="bloodGroup">Blood Group:</label>
+        <input type="text" id="bloodGroup">
+        <label for="religion">Religion:</label>
+        <input type="text" id="religion">
+        <button id="registerButton">Register Refugee</button>
+    </div>
+
+    <h1>Get Refugee Information</h1>
+    <div>
+        <label for="getUniqueID">Unique ID:</label>
+        <input type="number" id="getUniqueID">
+        <button id="getInfoButton">Get Refugee Information</button>
+    </div>
+    <div id="result"></div>
+
+    <h1>Get Refugee Information by Hash</h1>
+    <div>
+        <label for="refugeeHash">Enter Refugee Identity Hash:</label>
+        <input type="text" id="refugeeHash">
+        <button id="getInfoButtonByHash">Get Refugee Information</button>
+    </div>
+    <div id="resultByHash"></div>
+
+    <h1>Create Family Card</h1>
+    <div>
+        <label for="familyUniqueID">Family Unique ID:</label>
+        <input type="number" id="familyUniqueID">
+        <label for="refugeeIdentityHash">Refugee Identity Hash:</label>
+        <input type="text" id="refugeeIdentityHash">
+        <button id="createFamilyCardButton">Create Family Card</button>
+    </div>
+
+    <h1>Family Card Hash Retrieval</h1>
+    
+    <div>
+        <label for="refugeeIdentityHash">Enter Refugee Identity Hash:</label>
+        <input type="text" id="refugeeIdentityHash">
+        <button id="getFamilyCardButton">Get Family Card Hash</button>
+    </div>
+    
+    <div id="result1"></div>
+
+    <!-- Create New Family Section -->
+    <h2>Create New Family</h2>
+    <label for="newFamilyId">Family ID:</label>
+    <input type="number" id="newFamilyId">
+    <br>
+    <label for="maleRefugeeHash">Male Refugee Hash:</label>
+    <input type="text" id="maleRefugeeHash">
+    <br>
+    <label for="femaleRefugeeHash">Female Refugee Hash:</label>
+    <input type="text" id="femaleRefugeeHash">
+    <br>
+    <button id="createNewFamilyButton">Create New Family</button>
+
+    <!-- Get Family By ID Section -->
+    <h2>Get Family By ID</h2>
+    <label for="getFamilyId">Family ID:</label>
+    <input type="number" id="getFamilyId">
+    <br>
+    <button id="getFamilyByIdButton">Get Family By ID</button>
+
+    <!-- Display Section -->
+    <div id="createNewFamilyResult"></div>
+    <div id="getFamilyByIdResult"></div>
+
+    <div>
+        <h2>Add Food Item</h2>
+        <label for="foodSerialNo">Serial No:</label>
+        <input type="number" id="foodSerialNo" required>
+        <br>
+        <label for="foodFamilyCardHash">Family Card Hash:</label>
+        <input type="text" id="foodFamilyCardHash" required>
+        <br>
+        <button id="addFoodItemButton">Add Food Item</button>
+        <div id="addFoodItemResult"></div>
+    </div>
+
+    <div>
+        <h2>Add Non-Food Item</h2>
+        <label for="nonFoodSerialNo">Serial No:</label>
+        <input type="number" id="nonFoodSerialNo" required>
+        <br>
+        <label for="nonFoodFamilyCardHash">Family Card Hash:</label>
+        <input type="text" id="nonFoodFamilyCardHash" required>
+        <br>
+        <label for="nonFoodRefugeeIdentityHash">Refugee Identity Hash:</label>
+        <input type="text" id="nonFoodRefugeeIdentityHash" required>
+        <br>
+        <button id="addNonFoodItemButton">Add Non-Food Item</button>
+        <div id="addNonFoodItemResult"></div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
